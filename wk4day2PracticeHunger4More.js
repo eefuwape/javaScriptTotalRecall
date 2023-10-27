@@ -14,9 +14,9 @@ console.log the cat's age
 console.log the cat's breed */
 
 const cat1 = {
-    name : "Tabby",
-    breed : "Siamese",
-    age : 5
+    name: "Tabby",
+    breed: "Siamese",
+    age: 5
 }
 
 console.log(cat1.age)
@@ -30,8 +30,8 @@ breed
 age (a number) */
 
 const cat2 = {
-    name : "Garfield",
-    breed : "American Bobtail",
+    name: "Garfield",
+    breed: "American Bobtail",
     age: 3
 }
 
@@ -63,10 +63,11 @@ that a function can return an object */
 
 const combineCats = (catX, catY) => {
     const newCat = {}
+    // console.log(catX.name)
     newCat.name = catX.name + catY.name
     newCat.age = 1
     newCat.breed = catX.breed + '-' + catY.breed
-    console.log(newCat) 
+    return newCat
 }
 
 // 4. Cat brain bender
@@ -76,14 +77,25 @@ const combineCats = (catX, catY) => {
 
 Take a second to stew on that . . .
 
-What is the result of:
+What is the result of: */
 
-console.log(combineCats(combineCats(cat1, cat2), combineCats(cat1, cat2)));
-Whoa . . .
+// console.log(cat1.name)
+
+// combineCats(cat1, cat2)
+
+const fourCats = combineCats(combineCats(cat1, cat2), combineCats(cat1, cat2))
+
+/* Whoa . . .
 
 The above console.log is two levels deep of combineCats.
 
 Write a console.log that is three levels deep of combineCats. combineCats should have two arguments, each which 
 are combineCats, each which have two arguments, each which are combineCats. */
 
-combineCats(combineCats(combineCats(cat1, cat2), combineCats(cat1, cat2))), combineCats(combineCats(cat1, cat2), combineCats(cat1, cat2))
+// console.log(
+//     combineCats(
+//         combineCats(combineCats(cat1, cat2), combineCats(cat1, cat2)), ??long method but now easier to read
+//         combineCats(combineCats(cat1, cat2), combineCats(cat1, cat2))
+//     )
+// )
+// console.log(combineCats(fourCats, fourCats)) // method 2 - best method
